@@ -1,0 +1,24 @@
+[project]
+name = "mplsoccer-viz-tests"
+version = "0.1.0"
+description = "Visual regression tests for mplsoccer using pytest-mpl"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mplsoccer>=1.8.0",
+    "matplotlib>=3.6",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "seaborn>=0.13",
+    "pytest>=8.0",
+    "pytest-mpl>=0.17",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# 'default' style (not pytest-mpl's 'classic' default) so figures match modern matplotlib
+mpl-default-style = "default"
+mpl-default-tolerance = 2
